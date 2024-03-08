@@ -1,0 +1,19 @@
+[Default Applications]
+x-scheme-handler/http=org.mozilla.firefox.desktop
+text/html=org.mozilla.firefox.desktop
+application/xhtml+xml=org.mozilla.firefox.desktop
+x-scheme-handler/https=org.mozilla.firefox.desktop
+
+[Added Associations]
+application/pdf=org.gnome.Evince.desktop;
+image/png=org.gnome.Loupe.desktop;
+image/jpeg=org.gnome.Loupe.desktop;
+x-scheme-handler/sms=org.gnome.Shell.Extensions.GSConnect.desktop;
+x-scheme-handler/tel=org.gnome.Shell.Extensions.GSConnect.desktop;
+x-scheme-handler/http=org.mozilla.firefox.desktop;
+text/html=org.mozilla.firefox.desktop;
+application/xhtml+xml=org.mozilla.firefox.desktop;
+x-scheme-handler/https=org.mozilla.firefox.desktop;
+image/webp=org.gnome.Loupe.desktop;
+text/plain=org.gnome.Evince.desktop;
+application/vnd.openxmlformats-officedocument.presentationml.presentation=org.onlyoffice.desktopeditors.desktop;
