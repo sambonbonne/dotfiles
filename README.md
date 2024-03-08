@@ -8,7 +8,7 @@ Requirements and usage
 1. Install [Dotter](https://github.com/SuperCuber/dotter).
 2. Clone with `git clone --recurse-submodules`.
 3. Run `dotter deploy` in the cloned repository.
-4. Run `./scripts/setup-gnome.sh`.
+4. Run `sh ./scripts/setup-gnome.sh && sh ./scripts/install-applications.sh`.
 5. Enjoy!
 
 When updating, run `git pull && git submodule update`.
