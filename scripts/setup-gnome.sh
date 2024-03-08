@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+set -e
+
 if [ "${SETUP_GNOME_SOFTWARE}" = "1" ]; then
   # Updates and installation settings
 
