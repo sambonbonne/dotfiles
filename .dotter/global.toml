@@ -1,53 +1,54 @@
 [console]
+depends = [
+  "bat",
+  "helix",
+  "shell",
+  "starship",
+  "zellij"
+]
 
 [console.files]
 ssh_config = "~/.ssh/config"
 
 [graphics]
+depends = [
+  "alacritty"
+]
 
 [graphics.files]
 "locale.conf" = "~/.config/locale.conf"
 "mimeapps.list" = "~/.config/mimeapps.list"
 "user-dirs.dirs" = "~/.config/user-dirs.dirs"
 
+[work]
+depends = [
+  "development",
+  "devops",
+  "helix"
+]
+
 
 [alacritty]
-depends = ["graphics"]
 
 [alacritty.files]
 "alacritty/alacritty.toml" = "~/.config/alacritty/alacritty.toml"
 "alacritty/themes/themes/gruvbox_dark.toml" = "~/.config/alacritty/themes/gruvbox_dark.toml"
 "alacritty/themes/themes/gruvbox_light.toml" = "~/.config/alacritty/themes/gruvbox_light.toml"
 
-[bat]
-depends = ["console"]
-
 [bat.files]
 "bat/config" = "~/.config/bat/config"
-
-[development]
-depends = ["console"]
 
 [development.files]
 "git/config" = "~/.gitconfig"
 "git/gitignore_global" = "~/.gitignore_global"
 npmrc = "~/.npmrc"
 
-[devops]
-depends = ["console"]
-
 [devops.files]
 "k9s/skin.yaml" = "~/.config/k9s/skin.yml"
-
-[helix]
-depends = ["console"]
 
 [helix.files]
 "helix/config.toml" = "~/.config/helix/config.toml"
 "helix/languages.toml" = "~/.config/helix/languages.toml"
-
-[shell]
-depends = ["console"]
 
 [shell.files]
 dircolors = "~/.dircolors"
@@ -74,14 +75,8 @@ dircolors = "~/.dircolors"
 "shell/zsh/plugins.zsh" = "~/.zsh/plugins.zsh"
 "shell/zsh/prompt.zsh" = "~/.zsh/prompt.zsh"
 
-[starship]
-depends = ["console"]
-
 [starship.files]
 "starship.toml" = "~/.config/starship.toml"
-
-[zellij]
-depends = ["console"]
 
 [zellij.files]
 "shell/profile/zellij.sh" = "~/.config/profile/zellij.sh" # Zellij shortcuts
