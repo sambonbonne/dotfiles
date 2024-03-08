@@ -17,6 +17,13 @@ fi
 gsettings set org.gnome.desktop.default-applications.terminal exec 'alacritty'
 gsettings set org.gnome.desktop.default-applications.terminal exec-arg '-e'
 
+# Fonts
+
+gsettings set org.gnome.desktop.interface font-name 'Cantarell 12'
+gsettings set org.gnome.desktop.interface document-font-name 'Cantarell 12'
+gsettings set org.gnome.desktop.interface monospace-font-name 'Hack Nerd Font 12'
+gsettings set org.gnome.nautilus.desktop font 'Cantarell 12'
+
 # Keyboard shortcuts
 
 reset_keybinding() {
