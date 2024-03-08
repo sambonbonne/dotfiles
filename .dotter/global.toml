@@ -15,7 +15,7 @@ ssh_config = "~/.ssh/config"
 depends = ["graphics"]
 
 [alacritty.files]
-"alacritty/alacritty.toml" = "~/.config/alacritty.toml"
+"alacritty/alacritty.toml" = "~/.config/alacritty/alacritty.toml"
 "alacritty/themes/themes/gruvbox_dark.toml" = "~/.config/alacritty/themes/gruvbox_dark.toml"
 "alacritty/themes/themes/gruvbox_light.toml" = "~/.config/alacritty/themes/gruvbox_light.toml"
 
