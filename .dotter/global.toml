@@ -1,0 +1,92 @@
+[console]
+
+[console.files]
+ssh_config = "~/.ssh/config"
+
+[graphics]
+
+[graphics.files]
+"locale.conf" = "~/.config/locale.conf"
+"user-dirs.dirs" = "~/.config/user-dirs.dirs"
+
+
+[alacritty]
+depends = ["graphics"]
+
+[alacritty.files]
+"alacritty/alacritty.toml" = "~/.config/alacritty.toml"
+"alacritty/themes/themes/gruvbox_dark" = "~/.config/alacritty/themes/gruvbox_dark.toml"
+"alacritty/themes/themes/gruvbox_light" = "~/.config/alacritty/themes/gruvbox_light.toml"
+
+[bat]
+depends = ["console"]
+
+[bat.files]
+"bat/config" = "~/.config/bat/config"
+
+[development]
+depends = ["console"]
+
+[development.files]
+"git/config" = "~/.gitconfig"
+"git/gitignore_global" = "~/.gitignore_global"
+npmrc = "~/.npmrc"
+
+[helix]
+depends = ["console"]
+
+[helix.files]
+"helix/config.toml" = "~/.config/helix/config.toml"
+"helix/languages.toml" = "~/.languages/helix/languages.toml"
+
+[k9s]
+depends = ["console"]
+
+[k9s.files]
+"k9s/skin.yaml" = "~/.config/k9s/skin.yml"
+
+[shell]
+depends = ["console"]
+
+[shell.files]
+dircolors = "~/.dircolors"
+# profile (common files)
+"shell/profile.sh" = "~/.profile"
+"shell/profile/aliases.sh" = "~/.config/profile/aliases.sh"
+"shell/profile/completion.sh" = "~/.config/profile/completion.sh"
+"shell/profile/detect_os.sh" = "~/.config/profile/detect_os.sh"
+"shell/profile/env.sh" = "~/.config/profile/env.sh"
+"shell/profile/lc.sh" = "~/.config/profile/lc.sh"
+"shell/profile/path.sh" = "~/.config/profile/path.sh"
+"shell/profile/prompt.sh" = "~/.config/profile/prompt.sh"
+"shell/profile/ssh_agent.sh" = "~/.config/profile/ssh_agent.sh"
+"shell/profile/tools.sh" = "~/.config/profile/tools.sh"
+"shell/profile/welcome.sh" = "~/.config/profile/welcome.sh"
+# Bash files
+"shell/bashrc.sh" = "~/.bashrc"
+# ZSH files
+"shell/zshrc.sh" = "~/.zshrc"
+"shell/zsh/abbreviations.zsh" = "~/.zsh/abbreviations.zsh"
+"shell/zsh/completion.zsh" = "~/.zsh/completion.zsh"
+"shell/zsh/hooks.zsh" = "~/.zsh/hooks.zsh"
+"shell/zsh/map.zsh" = "~/.zsh/map.zsh"
+"shell/zsh/plygins.zsh" = "~/.zsh/plygins.zsh"
+"shell/zsh/prompt.zsh" = "~/.zsh/prompt.zsh"
+
+[starship]
+depends = ["console"]
+
+[starship.files]
+"startship.toml" = "~/.config/starship.toml"
+
+[zellij]
+depends = ["console"]
+
+[zellij.files]
+"shell/zellij.sh" = "~/.config/profile/zellij.sh" # Zellij shortcuts
+"zellij/config.yaml" = "~/.config/zellij/config.yaml"
+"zellij/layout/default.yaml" = "~/.config/zellij/layout/default.yaml"
+"zellij/layout/updates.yaml" = "~/.config/zellij/layout/updates.yaml"
+
+[zsh]
+depends = ["console"]
