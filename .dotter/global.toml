@@ -16,8 +16,8 @@ depends = ["graphics"]
 
 [alacritty.files]
 "alacritty/alacritty.toml" = "~/.config/alacritty.toml"
-"alacritty/themes/themes/gruvbox_dark" = "~/.config/alacritty/themes/gruvbox_dark.toml"
-"alacritty/themes/themes/gruvbox_light" = "~/.config/alacritty/themes/gruvbox_light.toml"
+"alacritty/themes/themes/gruvbox_dark.toml" = "~/.config/alacritty/themes/gruvbox_dark.toml"
+"alacritty/themes/themes/gruvbox_light.toml" = "~/.config/alacritty/themes/gruvbox_light.toml"
 
 [bat]
 depends = ["console"]
@@ -33,18 +33,18 @@ depends = ["console"]
 "git/gitignore_global" = "~/.gitignore_global"
 npmrc = "~/.npmrc"
 
+[devops]
+depends = ["console"]
+
+[devops.files]
+"k9s/skin.yaml" = "~/.config/k9s/skin.yml"
+
 [helix]
 depends = ["console"]
 
 [helix.files]
 "helix/config.toml" = "~/.config/helix/config.toml"
-"helix/languages.toml" = "~/.languages/helix/languages.toml"
-
-[k9s]
-depends = ["console"]
-
-[k9s.files]
-"k9s/skin.yaml" = "~/.config/k9s/skin.yml"
+"helix/languages.toml" = "~/.config/helix/languages.toml"
 
 [shell]
 depends = ["console"]
@@ -71,23 +71,20 @@ dircolors = "~/.dircolors"
 "shell/zsh/completion.zsh" = "~/.zsh/completion.zsh"
 "shell/zsh/hooks.zsh" = "~/.zsh/hooks.zsh"
 "shell/zsh/map.zsh" = "~/.zsh/map.zsh"
-"shell/zsh/plygins.zsh" = "~/.zsh/plygins.zsh"
+"shell/zsh/plugins.zsh" = "~/.zsh/plugins.zsh"
 "shell/zsh/prompt.zsh" = "~/.zsh/prompt.zsh"
 
 [starship]
 depends = ["console"]
 
 [starship.files]
-"startship.toml" = "~/.config/starship.toml"
+"starship.toml" = "~/.config/starship.toml"
 
 [zellij]
 depends = ["console"]
 
 [zellij.files]
-"shell/zellij.sh" = "~/.config/profile/zellij.sh" # Zellij shortcuts
+"shell/profile/zellij.sh" = "~/.config/profile/zellij.sh" # Zellij shortcuts
 "zellij/config.yaml" = "~/.config/zellij/config.yaml"
 "zellij/layout/default.yaml" = "~/.config/zellij/layout/default.yaml"
 "zellij/layout/updates.yaml" = "~/.config/zellij/layout/updates.yaml"
-
-[zsh]
-depends = ["console"]
