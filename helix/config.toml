@@ -1,0 +1,66 @@
+theme = "gruvbox"
+
+[editor]
+color-modes = true
+line-number = "relative"
+auto-save = true
+bufferline = "multiple"
+cursorline = true
+scrolloff = 8
+
+[editor.gutters]
+layout = [
+  "diff",
+  "diagnostics",
+  "line-numbers",
+  "spacer",
+]
+
+[editor.cursor-shape]
+# bar, block or underline
+normal = "block"
+insert = "bar"
+select = "block"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+skip-levels = 1
+character = "┊"
+
+[editor.soft-wrap]
+enable = true
+
+[editor.statusline]
+left = [
+  "spacer",
+  "spinner",
+  "mode",
+  "spacer",
+  "file-name",
+  "spacer",
+  "file-encoding",
+  "spacer",
+  "diagnostics",
+]
+right = [
+  "selections",
+  "spacer",
+  "position",
+  "spacer",
+  "total-line-numbers"
+]
+mode.normal = "↕"
+mode.insert = "↪"
+mode.select = "⇕"
+
+# [keys.normal]
+# space = { "space" = ":w" }
+[keys.normal.space]
+space = ":write"
+backspace = ":quit-all"
+ret = ":write-quit"
+[keys.normal.ret]
+ret = ":write-quit-all"

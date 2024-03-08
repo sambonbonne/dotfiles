@@ -1,0 +1,105 @@
+[user]
+  name = "Sam"
+  email = "sam@wekk.io"
+
+[includeIf "gitdir:~/dev/perso/"]
+  path = ~/dev/perso/gitconfig
+
+[includeIf "gitdir:~/dev/wekk/"]
+  path = ~/dev/wekk/gitconfig
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  grep = true
+  ui = true
+
+[color "branch"]
+  current = green
+  local = cyan
+  remote = blue
+
+[color "diff"]
+  meta = white
+  frag = yellow
+  old = red
+  new = green
+
+[color "status"]
+  added = green
+  changed = yellow
+  untracked = cyan
+
+# [difftool "delta"]
+# 	cmd = delta "$LOCAL" "$REMOTE"
+
+[difftool "difftastic"]
+	cmd = difftastic "$LOCAL" "$REMOTE"
+
+[diff]
+  compactionHeuristic = true
+  colorMoved = default
+  # tool = difftastic
+  tool = delta
+
+[merge]
+  conflictstyle = diff3
+
+[alias]
+  root = rev-parse --show-toplevel
+  s = status -uno ./
+  st = status -u ./
+  sta = status -u
+  df = diff
+  ck = checkout
+  ca = commit -a
+  cm = commit -m
+  cam = commit -am
+  amend = commit --amend
+  quickfix = commit --amend --no-edit
+  veryquickfix = !"git quickfix && git push --force"
+  rbc = rebase --continue
+  cp = cherry-pick -n
+  lg = log --date-order --graph --pretty=format:'%C(yellow)%h%Creset%Cred%d%Creset %C(green)%ci%Creset - %C(blue)%an%Creset <%C(cyan)%ae%Creset>\n%s\n' --abbrev-commit
+  ahead = log @{u}..HEAD --date-order --graph --pretty=format:'%C(yellow)%h%Creset %C(green)%cr%Creset - %s' --abbrev-commit
+  behind = log HEAD..@{u} --date-order --graph --pretty=format:'%C(yellow)%h%Creset %C(green)%cr%Creset - %s' --abbrev-commit
+  pl = pull --rebase
+  ps = !git last && git push
+  pls = !git pull --rebase && git push
+  get = "!git stash && git pull --rebase && git stash pop"
+  lines = !"git ls-files | xargs cat | wc -l 2>/dev/null"
+  rank = shortlog -sn --no-merges # show list of contributors in descending order by number of commits
+  clean-branches = "!git branch --merged | grep -E "[a-z]+/[A-Z]+-[0-9]+" | xargs git branch -d"
+  sync-multirepo = "!find . -mindepth 1 -maxdepth 1 -type d -exec sh -c 'test -d {}/.git && echo \"\t Sync {}\" && cd {} && git pull --rebase' \\;"
+
+[apply]
+  whitespace = strip
+
+[core]
+  autocrlf = false
+  preloadindex = true
+  excludesfile = ~/.gitignore_global
+  pager = delta
+
+[pull]
+  rebase = true
+
+[push]
+  default = simple
+  autoSetupRemote = true
+
+[rebase]
+  autoStash = true
+
+[init]
+	defaultBranch = main
+
+[delta]
+	navigate = true
+	syntax-theme = gruvbox-dark
+	line-numbers = true
+
+[pager]
+	difftool = true

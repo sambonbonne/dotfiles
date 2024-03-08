@@ -1,0 +1,50 @@
+# get completion for editor
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+format = """[╻](fg:white)$username$hostname$container$directory$git_branch
+[╰╴](fg:white)$status$character"""
+
+[character]
+success_symbol = "[❱](green)"
+error_symbol = "[❱](red)"
+
+[container]
+symbol = ""
+style = "blue"
+format = ' $symbol [$name]($style) [❭](fg:white)'
+
+[directory]
+style = "bold"
+format = " [$path]($style)"
+read_only_style = ""
+fish_style_pwd_dir_length = 1
+truncation_length = 5
+truncate_to_repo = false
+
+[git_branch]
+symbol = ""
+format = " [❭](fg:white)  [$branch(:$remote_branch)]($style)"
+style = "fg:bright-white"
+
+[hostname]
+ssh_symbol = ""
+trim_at = ""
+style = "cyan"
+format = '[$hostname]($style) [❭](fg:white)'
+
+[package]
+disabled = true
+
+[status]
+disabled = false
+symbol = ""
+style = "bright-red"
+recognize_signal_code = false
+format = " [$status]($style) [╶╴](fg:white)"
+
+[username]
+style_root = "yellow"
+style_user = "green"
+format = "[$user]($style) [❭](fg:white)"

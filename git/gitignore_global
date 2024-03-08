@@ -1,0 +1,43 @@
+## Env
+
+.env
+env
+*_env/
+env_*/
+
+## Vim
+
+# swap
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+
+# session
+Session.vim
+
+# temporary
+.netrwhist
+*~
+
+# auto-generated tag files
+tags
+tags.tmp
+
+
+## Completion
+
+# JavaScript
+.tern-project
+.tern-port
+
+# PHP
+.phpcomplete_extended/
+
+
+## Node DIY
+node_modules.old/
+node_modules.new/
+
+
+## Caches
+
+packer_cache

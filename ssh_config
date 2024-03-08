@@ -1,0 +1,9 @@
+Host *
+  TCPKeepAlive yes
+  ServerAliveInterval 120 # 2 minutes
+  ServerAliveCountMax 2
+  ControlMaster auto
+  ControlPath ~/.cache/ssh-control_%r-%h-%p
+  ControlPersist 10m
+
+Include config.d/*

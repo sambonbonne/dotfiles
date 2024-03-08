@@ -1,0 +1,26 @@
+[language-server.rust-analyzer]
+config.command = "clippy"
+config.cargo.features = "all"
+
+# [language-server.helm-ls]
+
+[[language]]
+name = "helm"
+scope = "source.helm"
+injection-regex = "^helm$"
+file-types = ["helm.yaml", "templates/*.yaml", { suffix = "templates/*.yaml" }, { suffix = "helm.yaml" }]
+roots = ["Chart.yaml"]
+comment-token = "#"
+indent = { tab-width = 2, unit = "  " }
+# language-server = { command = "helm_ls", args = ["serve"] }
+grammar = "helm"
+
+# [[language]]
+# name = "rust"
+
+# [language.config]
+# check.command = "clippy"
+
+[[language]]
+name = "starlark"
+file-types = ["bzl", "bazel", "BUILD", "Tiltfile"]

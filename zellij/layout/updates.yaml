@@ -1,0 +1,38 @@
+---
+session:
+  name: "Updates"
+
+template:
+  direction: Horizontal
+  parts:
+    - direction: Vertical
+      borderless: true
+      split_size:
+        Fixed: 1
+      run:
+        plugin:
+          location: "zellij:tab-bar"
+    - direction: Vertical
+      body: true
+
+tabs:
+  - name: "Updates"
+    direction: Vertical
+    parts:
+      - direction: Horizontal
+        split_size:
+          Percent: 70
+        parts:
+          - direction: Horizontal
+            run:
+              command: {cmd: yay, args: ["-Syu"]}
+          - direction: Horizontal
+            run:
+              command: {cmd: flatpak, args: ["update", "--user"]}
+      - direction: Horizontal
+        split_size:
+          Percent: 30
+        parts:
+          - direction: Vertical
+            run:
+              command: {cmd: zsh, args: ["-i", "-c", "zinit update"]}
