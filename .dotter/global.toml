@@ -64,9 +64,9 @@ dircolors = "~/.dircolors"
 "shell/profile.d/ssh_agent.sh" = "~/.config/profile/ssh_agent.sh"
 "shell/profile.d/tools.sh" = "~/.config/profile/tools.sh"
 # Bash files
-"shell/bashrc.sh" = "~/.bashrc"
+"shell/bashrc.bash" = "~/.bashrc"
 # ZSH files
-"shell/zshrc.sh" = "~/.zshrc"
+"shell/zshrc.zsh" = "~/.zshrc"
 "shell/zsh/abbreviations.zsh" = "~/.zsh/abbreviations.zsh"
 "shell/zsh/completion.zsh" = "~/.zsh/completion.zsh"
 "shell/zsh/hooks.zsh" = "~/.zsh/hooks.zsh"
