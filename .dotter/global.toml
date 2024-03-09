@@ -56,14 +56,14 @@ npmrc = "~/.npmrc"
 dircolors = "~/.dircolors"
 # profile (common files)
 "shell/profile.sh" = "~/.profile"
-"shell/profile/aliases.sh" = "~/.config/profile/aliases.sh"
-"shell/profile/completion.sh" = "~/.config/profile/completion.sh"
-"shell/profile/env.sh" = "~/.config/profile/env.sh"
-"shell/profile/lc.sh" = "~/.config/profile/lc.sh"
-"shell/profile/path.sh" = "~/.config/profile/path.sh"
-"shell/profile/prompt.sh" = "~/.config/profile/prompt.sh"
-"shell/profile/ssh_agent.sh" = "~/.config/profile/ssh_agent.sh"
-"shell/profile/tools.sh" = "~/.config/profile/tools.sh"
+"shell/profile.d/aliases.sh" = "~/.config/profile/aliases.sh"
+"shell/profile.d/completion.sh" = "~/.config/profile/completion.sh"
+"shell/profile.d/env.sh" = "~/.config/profile/env.sh"
+"shell/profile.d/lc.sh" = "~/.config/profile/lc.sh"
+"shell/profile.d/path.sh" = "~/.config/profile/path.sh"
+"shell/profile.d/prompt.sh" = "~/.config/profile/prompt.sh"
+"shell/profile.d/ssh_agent.sh" = "~/.config/profile/ssh_agent.sh"
+"shell/profile.d/tools.sh" = "~/.config/profile/tools.sh"
 # Bash files
 "shell/bashrc.sh" = "~/.bashrc"
 # ZSH files
@@ -79,7 +79,7 @@ dircolors = "~/.dircolors"
 "starship.toml" = "~/.config/starship.toml"
 
 [zellij.files]
-"shell/profile/zellij.sh" = "~/.config/profile/zellij.sh" # Zellij shortcuts
+"shell/profile.d/zellij.sh" = "~/.config/profile/zellij.sh" # Zellij shortcuts
 "zellij/config.kdl" = "~/.config/zellij/config.kdl"
 "zellij/layout/default.yaml" = "~/.config/zellij/layout/default.yaml"
 "zellij/layout/updates.yaml" = "~/.config/zellij/layout/updates.yaml"
