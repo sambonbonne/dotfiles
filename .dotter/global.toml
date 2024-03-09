@@ -19,6 +19,8 @@ depends = [
 "locale.conf" = "~/.config/locale.conf"
 "mimeapps.list" = "~/.config/mimeapps.list"
 "user-dirs.dirs" = "~/.config/user-dirs.dirs"
+# systemd units
+"systemd-units/syncthing.service" = "~/.config/systemd/user/syncthing.service"
 
 [work]
 depends = [

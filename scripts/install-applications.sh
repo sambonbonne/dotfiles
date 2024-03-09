@@ -17,3 +17,5 @@ flatpak install --user --noninteractive flathub \
   me.kozec.syncthingtk org.keepassxc.KeePassXC \
   app.organicmaps.desktop \
   org.gnome.Firmware
+
+systemctl enable --user --now syncthing.service
