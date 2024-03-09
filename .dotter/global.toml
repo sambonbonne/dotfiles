@@ -82,6 +82,6 @@ dircolors = "~/.dircolors"
 
 [zellij.files]
 "shell/profile/zellij.sh" = "~/.config/profile/zellij.sh" # Zellij shortcuts
-"zellij/config.yaml" = "~/.config/zellij/config.yaml"
+"zellij/config.kdl" = "~/.config/zellij/config.kdl"
 "zellij/layout/default.yaml" = "~/.config/zellij/layout/default.yaml"
 "zellij/layout/updates.yaml" = "~/.config/zellij/layout/updates.yaml"
