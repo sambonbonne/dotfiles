@@ -19,6 +19,9 @@ export PATH
 
 # User specific aliases and functions
 
-#export PS1="\\u \\H \\w ❯ "
-source "${HOME}/dev/dotfiles/config/profile/prompt.sh"
-export PS1='$(build_prompt)'
+if command -v starship; then
+	eval "$(starship init bash)"
+else
+	export PS1="\\u @ \\H \[\e[1m\]\\w\[\e[0m\] ❯ "
+	echo "Starship is not installed, basic prompt set."
+fi

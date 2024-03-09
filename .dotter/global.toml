@@ -61,7 +61,6 @@ dircolors = "~/.dircolors"
 "shell/profile.d/env.sh" = "~/.config/profile/env.sh"
 "shell/profile.d/lc.sh" = "~/.config/profile/lc.sh"
 "shell/profile.d/path.sh" = "~/.config/profile/path.sh"
-"shell/profile.d/prompt.sh" = "~/.config/profile/prompt.sh"
 "shell/profile.d/ssh_agent.sh" = "~/.config/profile/ssh_agent.sh"
 "shell/profile.d/tools.sh" = "~/.config/profile/tools.sh"
 # Bash files
@@ -73,7 +72,8 @@ dircolors = "~/.dircolors"
 "shell/zsh/hooks.zsh" = "~/.zsh/hooks.zsh"
 "shell/zsh/map.zsh" = "~/.zsh/map.zsh"
 "shell/zsh/plugins.zsh" = "~/.zsh/plugins.zsh"
-"shell/zsh/prompt.zsh" = "~/.zsh/prompt.zsh"
+# Fish files
+"shell/fish.fish" = "~/.config/fish/config.fish"
 
 [starship.files]
 "starship.toml" = "~/.config/starship.toml"

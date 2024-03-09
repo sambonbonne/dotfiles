@@ -50,9 +50,6 @@ load_zsh_config "plugins"
 ## Completion is a basic
 load_zsh_config "completion"
 
-# Load prompt
-load_zsh_config "prompt"
-
 ## Hooks
 load_zsh_config "hooks"
 
@@ -63,6 +60,14 @@ load_zsh_config "map"
 load_zsh_config "abbreviations"
 
 eval $(dircolors ~/.dircolors)
+
+# Load prompt
+if command -v starship; then
+  eval "$(starship init zsh)"
+else
+  export PROMPT="%n @ %m %B%~%b ❯ "
+	echo "Starship is not installed, basic prompt set."
+fi
 
 # If we have custom configuration
 _custom_configuration_file="${ZSH_CONFIG_PATH}/custom.zsh"

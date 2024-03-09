@@ -17,7 +17,6 @@ load_sh_config "ssh_agent"
 load_sh_config "lc"
 load_sh_config "tools"
 load_sh_config "aliases"
-load_sh_config "prompt"
 load_sh_config "completion"
 
 # sometimes the TERM variable is not really pretty
