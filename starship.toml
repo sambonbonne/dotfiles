@@ -3,8 +3,7 @@
 
 add_newline = false
 
-format = """[╻](fg:white)$username$hostname$container$directory$git_status$git_branch
-[╰╴](fg:white)$status$character"""
+format = """[╻](fg:white)$username$hostname$container$directory$git_status$git_branch$line_break[╰╴](fg:white)$status$character"""
 
 [character]
 success_symbol = "[❱](green)"
