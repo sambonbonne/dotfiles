@@ -6,24 +6,10 @@ alias monochrome='sed "s,\x1B\[[0-9;]*[a-zA-Z],,g"' # pipe anything here
 alias ports='ss -atn' # list opened ports
 alias clean_editors_tmp_files='find . -type f -name "*~" -exec rm -f {} \;'
 alias quickpod='podman run --rm -it -v "$(pwd):/mnt:z" -w /mnt'
-alias vagrant_pod='podman run --rm -it \
-  --volume /run/libvirt:/run/libvirt \
-  --volume "${HOME}:${HOME}:rslave" \
-  --env "HOME=${HOME}" \
-  --workdir "$(pwd)" \
-  --net host \
-  --privileged \
-  --security-opt label=disable \
-  --entrypoint /usr/bin/vagrant \
-  localhost/vagrant-container:latest'
 alias ssh-specific='ssh -oIdentitiesOnly=yes -oStrictHostKeyChecking=no'
 
 # custom ls/exa wrapper
-if ! command -v exa >/dev/null; then
-  alias l='ls -Fhl --group-directories-first --color=always'
-else
-  alias l='exa -Fl --group-directories-first --time-style="long-iso" --git'
-fi
+alias l='command exa -Fl --group-directories-first --time-style="long-iso" --git 2>/dev/null || ls -Fhl --group-directories-first --color=always'
 
 # Encrypting
 alias cipher='openssl rsautl -encrypt -pubin -inkey'
