@@ -19,7 +19,7 @@ export PATH
 
 # User specific aliases and functions
 
-if command -v starship; then
+if command -v starship 2>&1 >/dev/null; then
 	eval "$(starship init bash)"
 else
 	export PS1="\\u @ \\H \[\e[1m\]\\w\[\e[0m\] ❯ "

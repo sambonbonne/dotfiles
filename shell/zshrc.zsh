@@ -59,7 +59,7 @@ load_zsh_config "abbreviations"
 eval $(dircolors ~/.dircolors)
 
 # Load prompt
-if command -v starship; then
+if command -v starship 2>&1 >/dev/null; then
   eval "$(starship init zsh)"
 else
   export PROMPT="%n @ %m %B%~%b ❯ "

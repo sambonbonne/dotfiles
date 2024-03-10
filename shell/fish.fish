@@ -1,4 +1,4 @@
-if command -v starship
+if command -v starship 2>&1 >/dev/null
   starship init fish | source
 else
   function fish_prompt -d "Basic prompt"
