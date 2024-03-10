@@ -50,9 +50,6 @@ load_zsh_config "plugins"
 ## Completion is a basic
 load_zsh_config "completion"
 
-## Hooks
-load_zsh_config "hooks"
-
 ## And some mapping
 load_zsh_config "map"
 
