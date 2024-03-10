@@ -3,7 +3,7 @@
 
 add_newline = false
 
-format = """[╻](fg:white)$username$hostname$container$directory$git_branch
+format = """[╻](fg:white)$username$hostname$container$directory$git_status$git_branch
 [╰╴](fg:white)$status$character"""
 
 [character]
@@ -25,8 +25,23 @@ truncate_to_repo = false
 
 [git_branch]
 symbol = ""
-format = " [❭](fg:white)  [$branch(:$remote_branch)]($style)"
+format = " [$branch(:$remote_branch)]($style)"
 style = "fg:bright-white"
+
+[git_status]
+format = ' [❭](fg:white) $ahead_behind $all_status'
+conflicted = "[⚡](red)"
+ahead = "[↑](green)"
+behind = "[↓](yellow)"
+diverged = "[⇅](yellow)"
+up_to_date = "[](green)"
+untracked = ""
+stashed = "[☱](blue)"
+modified = "[●](yellow)"
+staged = "[●](green)"
+renamed = "[●](cyan)"
+deleted = "[●](red)"
+typechanged = "[●](purple)"
 
 [hostname]
 ssh_symbol = ""
