@@ -44,9 +44,6 @@ setopt SHARE_HISTORY
 setopt HIST_REDUCE_BLANKS
 setopt HIST_IGNORE_ALL_DUPS
 
-# plugins, something we love
-load_zsh_config "plugins"
-
 ## Completion is a basic
 load_zsh_config "completion"
 
@@ -58,9 +55,8 @@ load_zsh_config "abbreviations"
 
 eval $(dircolors ~/.dircolors)
 
-
-autoload -Uz compinit && compinit
-autoload bashcompinit && bashcompinit
+# Pload plugins
+load_zsh_config "plugins"
 
 # Load prompt
 if command -v starship 2>&1 >/dev/null; then

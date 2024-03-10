@@ -1,68 +1,57 @@
-ZINIT_HOME="${HOME}/.local/share/zinit/zinit.git"
-ZINIT_MAIN="${ZINIT_HOME}/zinit.zsh"
+# Load zcomet plugin manager (install if required)
 
-if [ ! -f "${ZINIT_MAIN}" ]; then
-  mkdir -p "${ZINIT_HOME}"
-  git clone --progress https://github.com/zdharma-continuum/zinit "${ZINIT_HOME}"
+ZCOMET_BIN_DIR="${ZDOTDIR:-${HOME}}/.zcomet/bin"
+
+if [[ ! -f "${ZCOMET_BIN_DIR}/zcomet.zsh" ]]; then
+  command git clone "https://github.com/agkozak/zcomet.git" "${ZCOMET_BIN_DIR}"
 fi
 
-source "${ZINIT_MAIN}"
+source "${ZCOMET_BIN_DIR}/zcomet.zsh"
 
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
 
-zinit ice src"src" wait lucid
-zinit load "zsh-users/zsh-completions"
+# Load plugins
 
-# seem to not work with ice wait
-zinit ice wait'!' lucid atload"bindkey '^[ ' autosuggest-accept"
-zinit load "zsh-users/zsh-autosuggestions"
-# bindkey '^[ ' autosuggest-accept
+zcomet load "chrissicool/zsh-256color"
 
-zinit ice wait lucid
-zinit load "hlissner/zsh-autopair"
+zcomet load "zsh-users/zsh-completions"
 
-# seem to bug with auto-suggestions with ice wait
-zinit ice wait'!' lucid atload"\
-  # in normal mode, up/down keys
-  bindkey \"^[[A\" history-substring-search-up;\
-  bindkey \"^[[B\" history-substring-search-down;\
-  # in vi mode, j/k keys
-  bindkey -M vicmd 'k' history-substring-search-up;\
-  bindkey -M vicmd 'j' history-substring-search-down"
-zinit load "zsh-users/zsh-history-substring-search"
-
-zinit load "chrissicool/zsh-256color"
-
-zinit ice wait lucid
-zinit load "jreese/zsh-titles"
-
-# # zplug "MichaelAquilina/zsh-auto-notify", if:"{ command -v notify-send ; } >/dev/null 2>&1"
-# # export AUTO_NOTIFY_THRESHOLD=20
-# # export AUTO_NOTIFY_TITLE="· %command → %exit_code ·"
-# # export AUTO_NOTIFY_BODY="Duration: %elapsed seconds"
-# zplug "marzocchi/zsh-notify", if:"{ command -v notify-send ; } >/dev/null 2>&1"
-# #zstyle ':notify:*' blacklist-regex 'kak|nvim|vim'
-# zstyle ':notify:*' enable-on-ssh yes
-# zstyle ':notify:*' command-complete-timeout 20
-# zstyle ':notify:*' error-title "(╯°□°)╯ ︵ ┻━┻"
-# zstyle ':notify:*' success-title "(⌐■_■)"
+zcomet load "hlissner/zsh-autopair"
 
 ZSH_COMMAND_TIME_MIN_SECONDS=15
 ZSH_COMMAND_TIME_MSG="Execution time: %s sec"
 ZSH_COMMAND_TIME_EXCLUDE=(time hx k9s kak tmx tmux toolbox vi vim zellij)
-zinit ice wait lucid
-zinit load "popstas/zsh-command-time"
+zcomet load "popstas/zsh-command-time"
 
-# syntax highlight plugins need to be the last loaded
+# syntax hightlight
 export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
-zinit ice wait lucid atinit'zicompinit'
-zinit load "zsh-users/zsh-syntax-highlighting"
+zcomet load "zsh-users/zsh-syntax-highlighting"
 
-zinit compinit
+# zsh-history-substring-search must be loaded AFTER zsh-syntax-highlight
+zcomet load "zsh-users/zsh-history-substring-search"
 
-# configure some plugins after loading
+# zsh-autosuggestions must be loaded AFTER zsh-history-substring-search
+zcomet load "zsh-users/zsh-autosuggestions"
+
+
+# Run compinit
+
+zcomet compinit
+autopair-init
+
+
+# Configure plugins that need to be configured after compinit
+
+# autosuggest
 export ZSH_AUTOSUGGEST_STRATEGY=("match_prev_cmd")
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=12'
+bindkey '^[ ' autosuggest-accept
+
+# history substring search
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=14'
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='fg=13'
+# in normal mode, up/down keys
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+# in vi mode, j/k keys
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
