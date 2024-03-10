@@ -2,11 +2,6 @@
 
 SHELL_BIN="$(ps -p $$ -ocomm=)"
 
-if [ "${SHELL_BIN}" = "zsh" ]; then
-  autoload -Uz compinit && compinit
-  autoload bashcompinit && bashcompinit
-fi
-
 # Kubernetes completions
 command -v kubectl >/dev/null && source <(kubectl completion "${SHELL_BIN}") # TODO not found compdef
 command -v kustomize >/dev/null && source <(kustomize completion "${SHELL_BIN}")
