@@ -44,9 +44,11 @@ depends = [
 "git/config" = "~/.gitconfig"
 "git/gitignore_global" = "~/.gitignore_global"
 npmrc = "~/.npmrc"
+"bin/virtualenv.sh" = "~/.local/bin/venv"
 
 [devops.files]
 "k9s/skin.yaml" = "~/.config/k9s/skin.yml"
+"bin/kubectl-finalizers_remove.sh" = "~/.local/bin/kubectl-finalizers_remove"
 
 [helix.files]
 "helix/config.toml" = "~/.config/helix/config.toml"
@@ -54,6 +56,10 @@ npmrc = "~/.npmrc"
 
 [shell.files]
 dircolors = "~/.dircolors"
+# custom binaries
+"bin/pdf-shrink.sh" = "~/.local/bin/pdf-shrink"
+"bin/search-and-launch.sh" = "~/.local/bin/seaunch"
+"bin/ssh-prepare.sh" = "~/.local/bin/ssh-prepare"
 # profile (common files)
 "shell/profile.sh" = "~/.profile"
 "shell/profile.d/aliases.sh" = "~/.config/profile/aliases.sh"
@@ -78,7 +84,7 @@ dircolors = "~/.dircolors"
 "starship.toml" = "~/.config/starship.toml"
 
 [zellij.files]
-"shell/profile.d/zellij.sh" = "~/.config/profile/zellij.sh" # Zellij shortcuts
+"bin/zellij-shortcut.sh" = "~/.local/bin/zj" # custom command
 "zellij/config.kdl" = "~/.config/zellij/config.kdl"
 "zellij/layout/default.yaml" = "~/.config/zellij/layout/default.yaml"
 "zellij/layout/updates.yaml" = "~/.config/zellij/layout/updates.yaml"
