@@ -23,5 +23,3 @@ load_sh_config "completion"
 if [ "${TERM}" = xterm ] || [ "${TERM}" = vt220 ]; then
     export TERM="xterm-256color"
 fi
-
-command -v zellij 2>&1 >/dev/null && load_sh_config "zellij"
