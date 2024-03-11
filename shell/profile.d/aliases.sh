@@ -9,7 +9,9 @@ alias quickpod='podman run --rm -it -v "$(pwd):/mnt:z" -w /mnt'
 alias ssh-specific='ssh -oIdentitiesOnly=yes -oStrictHostKeyChecking=no'
 
 # custom ls/exa wrapper
-alias l='command exa -Fl --group-directories-first --time-style="long-iso" --git 2>/dev/null || ls -Fhl --group-directories-first --color=always'
+command -v exa 2>&1 >/dev/null \
+  && alias l='command exa -Fl --group-directories-first --time-style="long-iso" --git' \
+  || alias l='ls -Fhl --group-directories-first --color=always'
 
 # Encrypting
 alias cipher='openssl rsautl -encrypt -pubin -inkey'
