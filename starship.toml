@@ -10,9 +10,9 @@ success_symbol = "[❱](green)"
 error_symbol = "[❱](red)"
 
 [container]
-symbol = "▣"
+symbol = ""
 style = "blue"
-format = '$symbol [$name]($style) [❭](fg:white)'
+format = ' $symbol [$name]($style) [❭](fg:white)'
 
 [directory]
 style = "bold"
