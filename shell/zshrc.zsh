@@ -3,10 +3,6 @@ if [ -f /etc/zsh/zprofile ]; then
   source /etc/zsh/zprofile
 fi
 
-if [ -f ~/.profile ]; then
-  source ~/.profile
-fi
-
 if [[ $TERM == xterm-termite && -f /etc/profile.d/vte.sh ]]; then
   . /etc/profile.d/vte.sh
   __vte_osc7
@@ -57,6 +53,10 @@ eval $(dircolors ~/.dircolors)
 
 # Pload plugins
 load_zsh_config "plugins"
+
+if [ -f ~/.profile ]; then
+  source ~/.profile
+fi
 
 # Load prompt
 if command -v starship 2>&1 >/dev/null; then
