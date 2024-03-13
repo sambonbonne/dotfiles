@@ -15,6 +15,8 @@ if [ ! -z "${SESSIONS_LIST}" ]; then
         zellij attach "${SELECTED_SESSION}"
       fi
     fi
+  elif [ "${1}" != "" ]; then
+    zellij attach "${1}"
   else
     echo "${SESSIONS_LIST}"
   fi
