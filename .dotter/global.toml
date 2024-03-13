@@ -19,8 +19,11 @@ depends = [
 "locale.conf" = "~/.config/locale.conf"
 "mimeapps.list" = "~/.config/mimeapps.list"
 "user-dirs.dirs" = "~/.config/user-dirs.dirs"
-# systemd units
-"systemd-units/syncthing.service" = "~/.config/systemd/user/syncthing.service"
+# custom binaries
+"bin/auto-theme-switch.sh" = "~/.local/bin/auto-theme-switch"
+# applications to start
+"autostart/auto-theme-switch.desktop" = "~/.config/autostart/auto-theme-switch.desktop"
+"autostart/syncthing.desktop" = "~/.config/autostart/syncthing.desktop"
 
 [work]
 depends = [

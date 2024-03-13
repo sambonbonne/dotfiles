@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Syncthing
+Comment=Syncthing background app
+Exec=flatpak run --user me.kozec.syncthingtk --minimized --dump
+Type=Application
+Icon=me.kozec.syncthingtk
+Categories=Network;
+X-Flatpak-RenamedFrom=syncthing-gtk.desktop;
+X-Flatpak=me.kozec.syncthingtk

@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Auto theme switch
+Comment=Desktop auto light and dark theme switch
+Exec=auto-theme-switch
+Type=Application
