@@ -1,0 +1,34 @@
+[Unit]
+Description=The Syncthing daemon
+# Podman Systemd unit has implicit network dependencies
+# See https://docs.podman.io/en/latest/markdown/podman-systemd.unit.5.html#implicit-network-dependencies
+
+[Container]
+Image=docker.io/syncthing/syncthing:latest
+Pull=always
+AutoUpdate=registry
+ReadOnly=true
+UserNS=keep-id:uid=%U,gid=%G
+Environment=HOME=%h
+Environment=STGUIADDRESS=127.0.0.1:8384
+PublishPort=127.0.0.1:8384:8384
+PublishPort=22000:22000/tcp
+PublishPort=22000:22000/udp
+PublishPort=21027:21027/udp
+Volume=%h/.config/syncthing:/var/syncthing/config:Z
+Volume=%h/docs:%h/docs:Z
+Volume=%h/media:%h/media:Z
+Volume=%h/dev:%h/dev:Z
+Volume=%h/art:%h/art:Z
+
+[Service]
+Restart=on-failure
+# 300 seconds = 5 minutes
+TimeoutStartSec=300
+TimeoutSec=10
+CPUQuota=25%
+CPUWeight=20
+IOWeight=60
+
+[Install]
+WantedBy=default.target

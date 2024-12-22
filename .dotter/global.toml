@@ -22,8 +22,8 @@ depends = [
 # custom binaries
 "bin/auto-theme-switch.sh" = "~/.local/bin/auto-theme-switch"
 # applications to start
-"autostart/auto-theme-switch.desktop" = "~/.config/autostart/auto-theme-switch.desktop"
-"autostart/syncthing.desktop" = "~/.config/autostart/syncthing.desktop"
+# "autostart/auto-theme-switch.desktop" = "~/.config/autostart/auto-theme-switch.desktop"
+"containers/syncthing.container" = "~/.config/containers/systemd/syncthing.container"
 
 [work]
 depends = [
