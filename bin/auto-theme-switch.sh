@@ -9,7 +9,8 @@ set -o pipefail
 # The script users freedesktop's settings portal so it sets the Gnome preference "just in case"
 ##
 
-ALACRITTY_CONFIG_FILE="${HOME}/.config/alacritty/alacritty.toml"
+sleep 5
+
 BAT_CONFIG_FILE="${HOME}/.config/bat/config"
 DELTA_CONFIG_FILE="${HOME}/.gitconfig"
 HELIX_CONFIG_FILE="${HOME}/.config/helix/config.toml"
@@ -36,19 +37,28 @@ update_file_parameter() {
 set_theme() {
   echo "Setting theme to variant: ${SET_THEME_VARIANT_TO}"
 
-  update_file_parameter "${ALACRITTY_CONFIG_FILE}" "themes" "gruvbox_light" "gruvbox_dark"
+  # Change configuration in files
   update_file_parameter "${BAT_CONFIG_FILE}" "--theme" "gruvbox-light" "gruvbox-dark"
   update_file_parameter "${HELIX_CONFIG_FILE}" "theme =" "gruvbox_light" "gruvbox"
   update_file_parameter "${ZELLIJ_CONFIG_FILE}" "theme" "gruvbox-light" "gruvbox-dark"
   update_file_parameter "${DELTA_CONFIG_FILE}" "syntax-theme" "gruvbox-light" "gruvbox-dark"
 
-  if [ "${SET_THEME_VARIANT_TO}" = "light" ]; then
-    gsettings set org.gnome.desktop.interface color-scheme 'default'
-  elif [ "${SET_THEME_VARIANT_TO}" = "dark" ]; then
-    gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-  else
-    echo "Called theme update with unknown variant: ${SET_THEME_VARIANT_TO}" >&2
+  # Reload Helix configration if possible
+  if pidof helix 2>&1 >/dev/null; then
+    pkill -USR1 helix
   fi
+  if pidof hx 2>&1 >/dev/null; then
+    pkill -USR1 hx
+  fi
+
+  # Update Gnome theme
+  # if [ "${SET_THEME_VARIANT_TO}" = "light" ]; then
+  #   gsettings set org.gnome.desktop.interface color-scheme 'default'
+  # elif [ "${SET_THEME_VARIANT_TO}" = "dark" ]; then
+  #   gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+  # else
+  #   echo "Called theme update with unknown variant: ${SET_THEME_VARIANT_TO}" >&2
+  # fi
 }
 
 echo "Starting to listen theme switch event with dbus-monitor"

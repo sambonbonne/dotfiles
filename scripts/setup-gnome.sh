@@ -12,11 +12,6 @@ if [ "${SETUP_GNOME_SOFTWARE}" = "1" ]; then
   #gsettings set org.gnome.software first-run true
 fi
 
-# Default apps
-
-gsettings set org.gnome.desktop.default-applications.terminal exec 'alacritty'
-gsettings set org.gnome.desktop.default-applications.terminal exec-arg '-e'
-
 # Fonts
 
 gsettings set org.gnome.desktop.interface font-name 'Cantarell 12'

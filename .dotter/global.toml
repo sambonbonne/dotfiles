@@ -11,9 +11,6 @@ depends = [
 ssh_config = "~/.ssh/config"
 
 [graphics]
-depends = [
-  "alacritty"
-]
 
 [graphics.files]
 "locale.conf" = "~/.config/locale.conf"
@@ -32,13 +29,6 @@ depends = [
   "helix"
 ]
 
-
-[alacritty]
-
-[alacritty.files]
-"alacritty/alacritty.toml" = "~/.config/alacritty/alacritty.toml"
-"alacritty/themes/themes/gruvbox_dark.toml" = "~/.config/alacritty/themes/gruvbox_dark.toml"
-"alacritty/themes/themes/gruvbox_light.toml" = "~/.config/alacritty/themes/gruvbox_light.toml"
 
 [bat.files]
 "bat/config" = "~/.config/bat/config"
