@@ -19,7 +19,7 @@ zcomet load "hlissner/zsh-autopair"
 
 ZSH_COMMAND_TIME_MIN_SECONDS=15
 ZSH_COMMAND_TIME_MSG="Execution time: %s sec"
-ZSH_COMMAND_TIME_EXCLUDE=(time hx k9s kak tmx tmux toolbox vi vim zellij)
+ZSH_COMMAND_TIME_EXCLUDE=(distrobox helix hx k9s kak time tmux tmx toolbox vi vim zellij zj)
 zcomet load "popstas/zsh-command-time"
 
 # syntax hightlight
