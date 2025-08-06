@@ -8,6 +8,12 @@
 [includeIf "gitdir:~/dev/wekk/"]
   path = ~/dev/wekk/gitconfig
 
+[branch]
+  sort = -committerdate
+
+[tag]
+  sort = version:refname
+
 [color]
   diff = auto
   status = auto
@@ -39,13 +45,15 @@
 	cmd = difftastic "$LOCAL" "$REMOTE"
 
 [diff]
+  algorithm = histogram
   compactionHeuristic = true
   colorMoved = default
+  renames = true
   # tool = difftastic
   tool = delta
 
 [merge]
-  conflictstyle = diff3
+  conflictstyle = zdiff3
 
 [alias]
   root = rev-parse --show-toplevel
@@ -65,7 +73,7 @@
   lg = log --date-order --graph --pretty=format:'%C(yellow)%h%Creset%Cred%d%Creset %C(green)%ci%Creset - %C(blue)%an%Creset <%C(cyan)%ae%Creset>\n%s\n' --abbrev-commit
   ahead = log @{u}..HEAD --date-order --graph --pretty=format:'%C(yellow)%h%Creset %C(green)%cr%Creset - %s' --abbrev-commit
   behind = log HEAD..@{u} --date-order --graph --pretty=format:'%C(yellow)%h%Creset %C(green)%cr%Creset - %s' --abbrev-commit
-  pl = pull --rebase
+  pl = pull
   ps = !git last && git push
   pls = !git pull --rebase && git push
   get = "!git stash && git pull --rebase && git stash pop"
@@ -83,23 +91,35 @@
   excludesfile = ~/.gitignore_global
   pager = delta
 
+[help]
+  autocorrect = prompt
+
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
+
 [pull]
   rebase = true
 
 [push]
   default = simple
   autoSetupRemote = true
+  followTags = true
+
+[commit]
+  verbose = true
 
 [rebase]
   autoStash = true
 
 [init]
-	defaultBranch = main
+  defaultBranch = main
 
 [delta]
-	navigate = true
-	syntax-theme = gruvbox-dark
-	line-numbers = true
+  navigate = true
+  syntax-theme = gruvbox-dark
+  line-numbers = true
 
 [pager]
-	difftool = true
+  difftool = true
