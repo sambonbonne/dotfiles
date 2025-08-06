@@ -9,6 +9,7 @@ depends = [
 
 [console.files]
 ssh_config = "~/.ssh/config"
+"containers/containers.conf" = "~/.config/containers/containers.conf"
 
 [graphics]
 
