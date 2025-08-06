@@ -29,9 +29,9 @@ test ! -z "${CMD_PROMPT}" && SKIM_CMD_PROMPT="${CMD_PROMPT} ${SKIM_CMD_PROMPT}"
 
 RESULT=""
 if [ -z "${QUERY}" ]; then
-  RESULT="$(echo -e "${SEARCH_LIST}" | skim --prompt="${SKIM_PROMPT}" --cmd-prompt="${SKIM_CMD_PROMPT}" --ansi)"
+  RESULT="$(printf "${SEARCH_LIST}" | skim --prompt="${SKIM_PROMPT}" --cmd-prompt="${SKIM_CMD_PROMPT}" --ansi)"
 else
-  RESULT="$(echo -e "${SEARCH_LIST}" | skim -0 -1 --query "${QUERY}" --prompt="${SKIM_PROMPT}" --cmd-prompt="${SKIM_CMD_PROMPT}" --ansi)"
+  RESULT="$(printf "${SEARCH_LIST}" | skim -0 -1 --query "${QUERY}" --prompt="${SKIM_PROMPT}" --cmd-prompt="${SKIM_CMD_PROMPT}" --ansi)"
 fi
 
 if [ -n "${RESULT}" ]; then
