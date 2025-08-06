@@ -17,7 +17,6 @@ fi
 gsettings set org.gnome.desktop.interface font-name 'Cantarell 12'
 gsettings set org.gnome.desktop.interface document-font-name 'Cantarell 12'
 gsettings set org.gnome.desktop.interface monospace-font-name 'Hack Nerd Font 12'
-gsettings set org.gnome.nautilus.desktop font 'Cantarell 12'
 
 # Keyboard shortcuts
 
@@ -43,6 +42,7 @@ echo "Remove Gnome default bindings"
 reset_keybindings '<Super>1' '<Super>2' '<Super>3' '<Super>4' '<Super>5' \
   '<Super>6' '<Super>7' '<Super>8' '<Super>9' '<Super>10' \
   '<Super>Tab' '<Alt>Tab' '<Shift><Super>Tab' '<Shift><Alt>Tab' \
+  '<Super>l' \
   '<Alt>q' '<Alt>w' '<Alt>e' '<Alt>r' '<Alt>t' \
   '<Alt>a' '<Alt>s' '<Alt>d' '<Alt>f' '<Alt>g' \
   '<Alt>h' '<Alt>j' '<Alt>k' '<Alt>l' \
