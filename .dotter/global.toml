@@ -69,6 +69,7 @@ dircolors = "~/.dircolors"
 "shell/zshrc.zsh" = "~/.zshrc"
 "shell/zsh/abbreviations.zsh" = "~/.zsh/abbreviations.zsh"
 "shell/zsh/completion.zsh" = "~/.zsh/completion.zsh"
+"shell/zsh/hooks.zsh" = "~/.zsh/hooks.zsh"
 "shell/zsh/map.zsh" = "~/.zsh/map.zsh"
 "shell/zsh/plugins.zsh" = "~/.zsh/plugins.zsh"
 # Fish files

@@ -40,14 +40,10 @@ setopt SHARE_HISTORY
 setopt HIST_REDUCE_BLANKS
 setopt HIST_IGNORE_ALL_DUPS
 
-## Completion is a basic
-load_zsh_config "completion"
-
-## And some mapping
-load_zsh_config "map"
-
-## Don't forget abbreviations
 load_zsh_config "abbreviations"
+load_zsh_config "completion"
+load_zsh_config "hooks"
+load_zsh_config "map"
 
 eval $(dircolors ~/.dircolors)
 

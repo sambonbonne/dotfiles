@@ -2,6 +2,10 @@
 bindkey -v
 bindkey '^ ' vi-forward-blank-word
 
+# Kep ^a and ^e
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+
 # edit command with $EDITOR using ; in vi mode
 autoload -z edit-command-line
 zle -N edit-command-line
