@@ -1,8 +1,8 @@
 SHELL_BIN="$(ps -p $$ -ocomm=)"
 
 source_completion() {
-  if command -v "${1}" 2>&1 >/dev/null; then
-    source <(eval "$@") >/dev/null
+  if command -v "${1}" >/dev/null 2>&1; then
+    source <(eval "$@") >/dev/null 2>&1
   fi
 }
 
@@ -23,5 +23,6 @@ source_completion nova completion "${SHELL_BIN}"
 source_completion scw autocomplete script "shell=${SHELL_BIN}"
 
 # Other tooling completion
+source_completion delta --generate-completion "${SHELL_BIN}"
 source_completion just --completions "${SHELL_BIN}"
 source_completion dotter gen-completions --shell "${SHELL_BIN}"
