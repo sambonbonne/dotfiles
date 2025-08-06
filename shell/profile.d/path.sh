@@ -27,6 +27,7 @@ path_append "${HOME}/.local/bin"
 path_append "${HOME}/.cargo/bin"
 path_append "${HOME}/.npm/bin"
 path_append "${HOME}/.composer/vendor/bin"
+path_append "${HOME}/.krew/bin"
 
 if [ -d "${HOME}/.sdkman" ] && [ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]; then
   source "${HOME}/.sdkman/bin/sdkman-init.sh"
