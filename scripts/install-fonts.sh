@@ -23,3 +23,8 @@ download_nerd_font() {
 
 download_nerd_font "Hack" "ttf"
 download_nerd_font "OpenDyslexic" "otf"
+
+NUNITO_PACKAGE="$(mktemp --suffix=.zip)"
+# curl --location --output "${NUNITO_PACKAGE}" "https://www.1001freefonts.com/fr/d/5900/nunito.zip"
+curl --location --output "${NUNITO_PACKAGE}" "https://www.fontsquirrel.com/fonts/download/nunito"
+unzip -o -d "${HOME}/.local/share/fonts/" "${NUNITO_PACKAGE}"
